@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost/_common/webservices/Eval" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost/_common/webservices/Eval" xmlns:intf="http://localhost/_common/webservices/Eval" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://localhost/_common/services/EvalService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://localhost/_common/webservices/Eval" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://localhost/_common/services/EvalService"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_string">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_GQLNode">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:GQLNode[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://localhost/_common/services/EvalService" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://localhost/_common/webservices/Eval"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="GQLNode">
+    <sequence>
+     <element name="referenceName" nillable="true" type="xsd:string"/>
+     <element name="displayName" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getDisplayValuesRequest">
+
+      <wsdl:part name="expressions" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setDisplayValuesRequest">
+
+      <wsdl:part name="expressions" type="impl:ArrayOf_xsd_string"/>
+
+      <wsdl:part name="newValues" type="impl:ArrayOf_xsd_string"/>
+
+      <wsdl:part name="changeReason" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValuesRequest">
+
+      <wsdl:part name="expressions" type="impl:ArrayOf_xsd_string"/>
+
+      <wsdl:part name="newValues" type="impl:ArrayOf_xsd_string"/>
+
+      <wsdl:part name="changeReason" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValueResponse">
+
+      <wsdl:part name="getValueReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNamedTrendLogResponse">
+
+      <wsdl:part name="getNamedTrendLogReturn" type="tns1:GQLNode"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSoapSourceAddressResponse">
+
+      <wsdl:part name="getSoapSourceAddressReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValuesResponse">
+
+      <wsdl:part name="setValuesReturn" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSoapSourceAddressRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="getValueRequest">
+
+      <wsdl:part name="expression" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setDisplayValueRequest">
+
+      <wsdl:part name="expression" type="xsd:string"/>
+
+      <wsdl:part name="newDisplayValue" type="xsd:string"/>
+
+      <wsdl:part name="changeReason" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getChildrenResponse">
+
+      <wsdl:part name="getChildrenReturn" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValueRequest">
+
+      <wsdl:part name="expression" type="xsd:string"/>
+
+      <wsdl:part name="newValue" type="xsd:string"/>
+
+      <wsdl:part name="changeReason" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setDisplayValuesResponse">
+
+      <wsdl:part name="setDisplayValuesReturn" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getChildrenRequest">
+
+      <wsdl:part name="expression" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValuesResponse">
+
+      <wsdl:part name="getValuesReturn" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNamedTrendLogRequest">
+
+      <wsdl:part name="eqRefPath" type="xsd:string"/>
+
+      <wsdl:part name="trendLogRefName" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDisplayValueRequest">
+
+      <wsdl:part name="expression" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDisplayValuesResponse">
+
+      <wsdl:part name="getDisplayValuesReturn" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValuesRequest">
+
+      <wsdl:part name="expressions" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValueResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getDisplayValueResponse">
+
+      <wsdl:part name="getDisplayValueReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setDisplayValueResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getFilteredChildrenRequest">
+
+      <wsdl:part name="expression" type="xsd:string"/>
+
+      <wsdl:part name="filter" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFilteredChildrenResponse">
+
+      <wsdl:part name="getFilteredChildrenReturn" type="impl:ArrayOf_tns1_GQLNode"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Eval">
+
+      <wsdl:operation name="getValue" parameterOrder="expression">
+
+         <wsdl:input message="impl:getValueRequest" name="getValueRequest"/>
+
+         <wsdl:output message="impl:getValueResponse" name="getValueResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValue" parameterOrder="expression newValue changeReason">
+
+         <wsdl:input message="impl:setValueRequest" name="setValueRequest"/>
+
+         <wsdl:output message="impl:setValueResponse" name="setValueResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValues" parameterOrder="expressions">
+
+         <wsdl:input message="impl:getValuesRequest" name="getValuesRequest"/>
+
+         <wsdl:output message="impl:getValuesResponse" name="getValuesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getChildren" parameterOrder="expression">
+
+         <wsdl:input message="impl:getChildrenRequest" name="getChildrenRequest"/>
+
+         <wsdl:output message="impl:getChildrenResponse" name="getChildrenResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValues" parameterOrder="expressions newValues changeReason">
+
+         <wsdl:input message="impl:setValuesRequest" name="setValuesRequest"/>
+
+         <wsdl:output message="impl:setValuesResponse" name="setValuesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFilteredChildren" parameterOrder="expression filter">
+
+         <wsdl:input message="impl:getFilteredChildrenRequest" name="getFilteredChildrenRequest"/>
+
+         <wsdl:output message="impl:getFilteredChildrenResponse" name="getFilteredChildrenResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDisplayValues" parameterOrder="expressions">
+
+         <wsdl:input message="impl:getDisplayValuesRequest" name="getDisplayValuesRequest"/>
+
+         <wsdl:output message="impl:getDisplayValuesResponse" name="getDisplayValuesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNamedTrendLog" parameterOrder="eqRefPath trendLogRefName">
+
+         <wsdl:input message="impl:getNamedTrendLogRequest" name="getNamedTrendLogRequest"/>
+
+         <wsdl:output message="impl:getNamedTrendLogResponse" name="getNamedTrendLogResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setDisplayValue" parameterOrder="expression newDisplayValue changeReason">
+
+         <wsdl:input message="impl:setDisplayValueRequest" name="setDisplayValueRequest"/>
+
+         <wsdl:output message="impl:setDisplayValueResponse" name="setDisplayValueResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDisplayValue" parameterOrder="expression">
+
+         <wsdl:input message="impl:getDisplayValueRequest" name="getDisplayValueRequest"/>
+
+         <wsdl:output message="impl:getDisplayValueResponse" name="getDisplayValueResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setDisplayValues" parameterOrder="expressions newValues changeReason">
+
+         <wsdl:input message="impl:setDisplayValuesRequest" name="setDisplayValuesRequest"/>
+
+         <wsdl:output message="impl:setDisplayValuesResponse" name="setDisplayValuesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSoapSourceAddress">
+
+         <wsdl:input message="impl:getSoapSourceAddressRequest" name="getSoapSourceAddressRequest"/>
+
+         <wsdl:output message="impl:getSoapSourceAddressResponse" name="getSoapSourceAddressResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EvalSoapBinding" type="impl:Eval">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getValueRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getValueResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setValueRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setValueResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValues">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getValuesRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getValuesResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getChildren">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getChildrenRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getChildrenResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValues">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setValuesRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setValuesResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFilteredChildren">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFilteredChildrenRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFilteredChildrenResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDisplayValues">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDisplayValuesRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDisplayValuesResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNamedTrendLog">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNamedTrendLogRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNamedTrendLogResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setDisplayValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setDisplayValueRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setDisplayValueResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDisplayValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDisplayValueRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDisplayValueResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setDisplayValues">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setDisplayValuesRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setDisplayValuesResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSoapSourceAddress">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSoapSourceAddressRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.core.green.controlj.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSoapSourceAddressResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/_common/webservices/Eval" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="EvalService">
+
+      <wsdl:port binding="impl:EvalSoapBinding" name="Eval">
+
+         <wsdlsoap:address location="http://localhost/_common/webservices/Eval"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
