@@ -1,4 +1,4 @@
-#SoapClientExample
+# SoapClientExample
 - - -
 This application is a "Hello World" example for creating a Apache Axis Soap Client.
 Assumes you have a "Tomcat" style web server running on localhost.
@@ -16,7 +16,7 @@ this application in IntelliJ is:
     * Enter a Module Name and click "Finish"
     * Click "OK"
     * When the Soap Configuration window pops up, click "Cancel"
-3) In the new Module under the source directory "src", right click and select "Create a new Package"
+3) In the new Module under the source directory "src", right click and select "Create a new Package" → Name the Package
 4) Right Click the new package and click "Create Web Service Client" and enter the following fields:
     * Name
     * URL (may need to press ENTER for the form to recognize the new address and enable "OK")
@@ -29,7 +29,8 @@ this application in IntelliJ is:
     * Generate Classes for Schema Group
     * Generate Unreferenced Elements
     * Support wrapped document/literal style → Checked
-5) Must update the SoapEval class for GetValue and SetValue routines (which are defined by the WSDL)
+    * Press OK
+5) Must update the SoapEval class for GetValue and SetValue routines (which are defined by the WSDL) - See SoapEval class
 6) Generate a "Hello, world" application to test
 7) TODO: Be able to use this outside the existing module (create a JAR)
 
