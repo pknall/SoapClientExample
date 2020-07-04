@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SoapTools-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SoapEvalClientModule/lib/SoapTools-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
